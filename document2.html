@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Personal Details</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
+      opacity: 0.98;
+    }
+    h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 0.5rem;
+    }
+    hr {
+      border: 1px solid #007acc;
+      margin-bottom: 1rem;
+    }
+    marquee {
+      color: #007acc;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      color: #004080;
+      font-weight: 500;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border: 1px solid #bcdffb;
+      border-radius: 4px;
+      font-size: 1rem;
+      background: #f8fafc;
+      box-sizing: border-box;
+    }
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    .radio-group {
+      margin-top: 0.3rem;
+    }
+    button, .marks-inputs button {
+      background: #0099ff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+      font-weight: 500;
+    }
+    button:hover, .marks-inputs button:hover {
+      background: #007acc;
+    }
+    .marks-section {
+      margin-top: 2.5rem;
+      background: #f1f5fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .marks-inputs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .marks-inputs input[type="text"], .marks-inputs input[type="number"] {
+      width: 120px;
+      margin-top: 0;
+    }
+    .marks-table {
+      margin-top: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.7rem;
+      text-align: center;
+      border-bottom: 1px solid #e0e7ef;
+    }
+    th {
+      background: #007acc;
+      color: white;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .entry-list {
+      margin-top: 1.5rem;
+    }
+    .entry {
+      background: #e6f0fa;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 1rem;
+      }
+      .marks-section {
+        padding: 1rem;
+      }
+      .marks-inputs input[type="text"], .marks-inputs input[type="number"] {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PERSONAL DETAILS</h1>
+    <hr>
+    <marquee>**Please enter your personal details**</marquee>
+    <form method="post">
+      <label>Full name:</label>
+      <input type="text" name="full_name" required>
+      <label>Age:</label>
+      <input type="number" name="age" min="1" required>
+      <label>DISABILITIES:</label>
+      <div class="radio-group">
+        <input type="radio" name="Disability" value="If Disable" id="dis1">
+        <label for="dis1" style="display:inline;">If Disable</label>
+        <input type="radio" name="Disability" value="If not disable" id="dis2" style="margin-left:1.5rem;">
+        <label for="dis2" style="display:inline;">If not disable</label>
+      </div>
+      <label>If Disable specify the disability:</label>
+      <input type="text" name="If_disable">
+      <label>Previous school studied:</label>
+      <input type="text" name="Previous_school_studied">
+      <label>Region:</label>
+      <input type="text" name="region">
+      <label>GUARDIAN:</label>
+      <div class="radio-group">
+        <input type="radio" name="guardian" value="parent" id="g1">
+        <label for="g1" style="display:inline;">parent</label>
+        <input type="radio" name="guardian" value="relative" id="g2" style="margin-left:1.5rem;">
+        <label for="g2" style="display:inline;">relative</label>
+      </div>
+      <label>Home address:</label>
+      <input type="text" name="address">
+      <label>Contact information:</label>
+      <input type="text" name="contact">
+      <label>Work:</label>
+      <input type="text" name="work">
+      <label>Email:</label>
+      <input type="text" name="email">
+      <label>Work address:</label>
+      <input type="text" name="work_address">
+      <div class="marksInputs">
+    <h1>Enter Your Marks</h1>
+    <hr>
+    <label for="marksInput">Enter all your marks (separated by commas or spaces):</label>
+    <input type="text" id="marksInput" placeholder="e.g. 80, 75, 90 60">
+    <button onclick="calculateMarks()">Get</button>
+    <div class="marks-table" id="resultsTable" style="display:none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Total Marks</th>
+            <th>Average</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="totalCell"></td>
+            <td id="averageCell"></td>
+            <td id="gradeCell"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+      <button onclick="alert('Details submitted successfully!')">Submit</button>
+
+    </form>
+    <a href="dash.html" style="text-decoration: none; padding: 2rem; margin: 2rem;"> Back Home</a>
+    
+  <script>
+    function calculateMarks() {
+      const input = document.getElementById('marksInput').value;
+
+      const marks = input.split(/[\s,]+/).map(Number).filter(n => !isNaN(n) && n >= 0 && n <= 100);
+      if (marks.length === 0) {
+        alert('Please enter at least one valid mark between 0 and 100.');
+        document.getElementById('resultsTable').style.display = 'none';
+        return;
+      }
+      const total = marks.reduce((a, b) => a + b, 0);
+      const average = total / marks.length;
+      let grade = '';
+      if (average >= 80) grade = 'A';
+      else if (average >= 70) grade = 'B';
+      else if (average >= 60) grade = 'C';
+      else if (average >= 50) grade = 'D';
+      else if (average >= 40) grade = 'E';
+      else grade = 'F';
+
+      document.getElementById('totalCell').textContent = total.toFixed(2);
+      document.getElementById('averageCell').textContent = average.toFixed(2);
+      document.getElementById('gradeCell').textContent = grade;
+      document.getElementById('resultsTable').style.display = 'block';
+    }
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const details = {};
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

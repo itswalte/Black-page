@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angela Schools</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ccc;
+      /* background-image: url('bgimage.jpeg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; */
+    }
+
+    header {
+      background: #004080;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #0066cc;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav button {
+      background: #0099ff;
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: #007acc;
+    }
+
+    .content {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      padding: 2rem;
+      background-image: url('bgimage.jpeg');
+      background-position: center;
+      background-size: cover;
+      background-color: #f0f0f0;
+      background-repeat: no-repeat;
+    }
+
+    .active {
+      display: block;
+    }
+   
+    form{
+      height: auto;
+      width: 40%;
+      margin: 5rem auto 5rem auto;
+      border-radius: 1rem;
+      background-color: white;
+      box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+            display: flex;
+      flex-direction: column;
+      
+      /* padding: 2rem; */
+      gap: 1rem;
+      /* margin: 2rem; */
+    }
+    form h2{
+      text-align: center;
+      font-size: 2rem;
+
+    }
+    form label{
+      margin-left: 2rem;
+      font-weight: 600;
+    }
+    /* form input {
+      margin-left: 2rem;
+      width: 80%;
+      padding: 1.2rem;
+    } */
+    button{
+      border-radius: .5rem;
+      margin-left: 2rem;
+    }
+    form button{
+      padding: 1.5rem;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      border: none;
+      transition: .5s ease;
+      color: #f0f0f0;
+      background-color: #007acc;
+    }
+    form button:hover{
+      background-color: #004080;
+      transform: scale(1.1);
+    }
+    form input, textarea{
+      resize: none;
+      padding: 1.2rem;
+      width: 80%;
+      margin-left: 2rem;
+      background-color: #ddd;
+      border-color: transparent;
+      border-radius: .5rem;
+    }
+    form input::placeholder, textarea::placeholder{
+      color: #000;
+    }
+    form textarea:focus, input:focus{
+      border: 3px solid blue;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Angela Private Schools</h1>
+    <marquee>Welcome to our official website😊😊😊😊</marquee>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('results')">Academic Results</button>
+    <button onclick="showSection('contact')">Contact us</button>
+  </nav>
+
+  <div id="home" class="content active">
+    <h2>HOME</h2>
+    <p> We are proud to offer quality education to our students.</p><br>
+    <h2>MOTTO</h2>
+    <p>Education for a better tommorow </p><br>
+    <h2>VISION</h2>
+    <p>To provide quality education for students and develop them morally and spiritually to be good force in any society they live in</p><br>
+    <h2>MISSION</h2>
+    <p>To ensure that the education we provide prepares the students to be accepted in society and join all levels of higher education while becoming independent and patriotic citizens of the nation
+  </div>
+
+  <div id="about" class="content">
+    <h2>ABOUT US</h2>
+    <p>Our school was founded in 2023 and has been committed to excellence in education ever since.</p>
+    <h2>SCHOOL FEES</h2>
+    <p>Our school has a maximum charge of 1 millions for boarding scholars and 500,000/= for day scholars as the fee per student entry.<br>
+      The fee will be paid in four quarters as per the school curriculum which will be 250,000/= for boarding scholars and 125,000/= for day scholars on each quarter<br>
+      The money will cover all the needs of the students including academic needs and other personal needs to those boarding scholars<br>
+      Failure to do so,the child will not be received at school
+    </p>
+    <h2>SCHOOL UNIFORM</h2>
+    <p>The students should have a royal blue shirt,black socks,black shoes,royal blue sweater,a black skirt for girls and a black trouser with white rubber shoes for boes<br> 
+      For boarding scholars,a royal blue shamba dress with white strips for girls and any blue jersey with black trousers for boys<br>
+      The school uniform and shamba dress cloth will be provided at school perpendicular with the designs<br>  </p>
+      <h2>SCHOOL ANNUAL TIMETABLE</h2>
+      <P>Every student will be provided with the comprehensive schedule that outlines the entire academic year including classes,events and breaks<br>
+        This will help to serve as a foundation document for planning and managing school activities throughout the year
+   </P><br>
+   <h2>SCHOOL RULES AND REGULATIONS</h2>
+   <P>Every student will also be provided with the rules and regulations which will cover areas like attendance,uniform,conduct amd respect for property and others<br>
+    They especially aim to create a safe,respective,and conducive learning environment for all students<br>
+    Failure to do so severe disciplinary measures will be taken upon him or her
+</P>
+  </div>
+
+  <div id="results" class="content">
+    <h2>Academic Results</h2>
+    <p>Our students consistently achieve outstanding results in national and regional examinations.</p>
+    <p>Per the school terms the students should provide his/her personal information</p>
+    <p>For writing your personal details<a href="document2.html" style="text-decoration: none;"> Click here!!!!</a></p>
+  </div>
+
+  <div id="contact" class="content">
+    <form action="">
+      <h2>Contact Form</h2>
+      <label for="name">Your Name</label>
+      <input type="text" name="name" placeholder="Write your name">
+      <label for="email">Your Email</label>
+      <input type="email" name="Email" placeholder="Write your Email" required>
+      <label for="message">Your Message</label>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <button type="submit">SEND NOW</button>
+    </form>
+  </div>
+  <script>
+    function showSection(id) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Show the selected one
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
